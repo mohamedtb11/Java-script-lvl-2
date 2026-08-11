@@ -53,21 +53,30 @@
 //         alert("Login failed");
 //     }
 // })
-
-let count = 10
-let countt = document.getElementById("count")
-let start = document.getElementById("start")
-let stop = document.getElementById("stop")
-let msg = document.getElementById("msg")
+let count = 5
+let counttt = 1
+let bu = document.getElementById("bu")
+let but = document.getElementById("but")
+let butto = document.getElementById("butto")
+let button = document.getElementById("button")
+let buttonn = document.getElementById("buttonn")
+let countt = document.getElementById("countt")
 let interv 
 
-start.addEventListener("click" ,function() {
+
+bu.addEventListener("click" , function() {
+    setTimeout(function() {
+        alert("Subscribe to my channel to get tech tips & tricks")
+    },3000)
+})
+
+but.addEventListener("click" ,function() {
     interv = setInterval(function() {
     countt.innerHTML = count
     
     if (count == 0) {
     clearInterval(interv)
-msg.innerHTML = "Timer stopped"
+    alert("message")
     setTimeout(function() {
         msg.innerHTML = ""
     },2000)
@@ -79,13 +88,22 @@ msg.innerHTML = "Timer started"
     },2000)
 })
 
-
-
-stop.addEventListener("click" ,function() {
+butto.addEventListener("click" ,function() {
     clearInterval(interv)
     count = 0
-msg.innerHTML = "Timer stopped"
-    setTimeout(function() {
-        msg.innerHTML = ""
-    },2000)
+alert("refused message") 
+    
+})
+
+button.addEventListener("click" , function() {
+    interv = setInterval(function() {
+    countt.innerHTML = counttt
+    
+counttt+=1},1000)
+})
+
+buttonn.addEventListener("click" , function() {
+    clearInterval(interv)
+    count = 0
+    alert("Timer stopped") 
 })
